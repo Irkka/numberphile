@@ -4,7 +4,7 @@
   "description": "Numberphile YouTube channel introduced some fun properties of integers. This is a function library to poll these properties from any given integer.",
   "main": "lib/numberphile.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha test/**/*_spec.js"
   },
   "repository": {
     "type": "git",

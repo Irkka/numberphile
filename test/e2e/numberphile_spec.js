@@ -13,4 +13,16 @@ describe('Numberphile', function () {
       assert(!Numberphile.isHappy(unhappyNumber))
     })
   })
+
+  describe('#isNarcissistic', function () {
+    it('should return true, if the number is narcissistic', function () {
+      let narcissisticNumber =  8208
+      assert(Numberphile.isNarcissistic(narcissisticNumber))
+    })
+
+    it('should return false, if the number is not narcissistic', function () {
+      let nonNarcissisticNumber = 11
+      assert(!Numberphile.isNarcissistic(nonNarcissisticNumber))
+    })
+  })
 })
