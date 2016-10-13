@@ -1,0 +1,25 @@
+{
+  "name": "numberphile",
+  "version": "0.0.1",
+  "description": "Numberphile YouTube channel introduced some fun properties of integers. This is a function library to poll these properties from any given integer.",
+  "main": "lib/numberphile.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Irkka/numberphile.git"
+  },
+  "keywords": [
+    "numberphile"
+  ],
+  "author": "Ilkka Hakkarainen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Irkka/numberphile/issues"
+  },
+  "homepage": "https://github.com/Irkka/numberphile#readme",
+  "devDependencies": {
+    "mocha": "^3.1.2"
+  }
+}
