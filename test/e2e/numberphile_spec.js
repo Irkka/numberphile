@@ -1,5 +1,5 @@
 const assert = require('assert'),
-  Numberphile = require('../lib/numberphile')
+  Numberphile = require('../../lib/numberphile')
 
 describe('Numberphile', function () {
   describe('#isHappy', function () {
@@ -23,6 +23,18 @@ describe('Numberphile', function () {
     it('should return false, if the number is not narcissistic', function () {
       let nonNarcissisticNumber = 11
       assert(!Numberphile.isNarcissistic(nonNarcissisticNumber))
+    })
+  })
+
+  describe('#isGrafting', function () {
+    it('should return true, if the number is grafting', function () {
+      let graftingNumber = 98
+      assert(Numberphile.isGrafting(graftingNumber))
+    })
+
+    it('should return false, if the number is not grafting', function () {
+      let nonGraftingNumber = 97
+      assert(!Numberphile.isGrafting(nonGraftingNumber))
     })
   })
 })
