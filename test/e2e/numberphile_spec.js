@@ -83,7 +83,37 @@ describe('Numberphile', function () {
 
 		it('should raise an exception, when called with a non-integer argument', function () {
 			let nonIntegerFunctionCall = function () {
-				Numberphile.isNarcissistic('hello')
+				Numberphile.isHighlyComposite('hello')
+			}
+
+			assert.throws(nonIntegerFunctionCall)
+		})
+	})
+
+	describe('#isPerfect', function () {
+		it('should return true, if the number is perfect', function () {
+			let perfectNumber = 8128
+
+			assert(Numberphile.isPerfect(perfectNumber))
+		})
+
+		it('should return false, if the number is imperfect', function () {
+			let imperfectNumber = 5
+
+			assert(!Numberphile.isPerfect(imperfectNumber))
+		})
+
+		it('should raise an exception, when called with a non-positive argument', function () {
+			let nonPositiveFunctionCall = function () {
+				Numberphile.isPerfect(-1)
+			}
+
+			assert.throws(nonPositiveFunctionCall)
+		})
+
+		it('should raise an exception, when called with a non-integer argument', function () {
+			let nonIntegerFunctionCall = function () {
+				Numberphile.isPerfect('hello')
 			}
 
 			assert.throws(nonIntegerFunctionCall)
