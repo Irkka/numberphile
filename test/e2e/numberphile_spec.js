@@ -119,4 +119,36 @@ describe('Numberphile', function () {
 			assert.throws(nonIntegerFunctionCall)
 		})
 	})
+
+	describe('#areAmicable', function () {
+		it('should return true, if the numbers are amicable to each other', function () {
+			let amicableNumber = 220,
+				anotherAmicableNumber = 284
+
+			assert(Numberphile.areAmicable(amicableNumber, anotherAmicableNumber))
+		})
+
+		it('should return false, if the numbers are not amicable to each other', function () {
+			let nonAmicableNumber = 5,
+				anotherNonAmicableNumber = 13
+
+			assert(!Numberphile.areAmicable(nonAmicableNumber, anotherNonAmicableNumber))
+		})
+
+		it('should raise an exception, when called with a non-positive argument', function () {
+			let nonPositiveFunctionCall = function () {
+				Numberphile.areAmicable(-1, 1)
+			}
+
+			assert.throws(nonPositiveFunctionCall)
+		})
+
+		it('should raise an exception, when called with a non-integer argument', function () {
+			let nonIntegerFunctionCall = function () {
+				Numberphile.areAmicable('hello', 1)
+			}
+
+			assert.throws(nonIntegerFunctionCall)
+		})
+	})
 })
