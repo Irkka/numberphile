@@ -151,4 +151,34 @@ describe('Numberphile', function () {
 			assert.throws(nonIntegerFunctionCall)
 		})
 	})
+
+	describe('#isMersennePrime', function () {
+		it('should return true, if the number is a Mersenne prime', function () {
+			let mersennePrime = 31
+
+			assert(Numberphile.isMersennePrime(mersennePrime))
+		})
+
+		it('should return false, if the number is not a Mersenne prime', function () {
+			let nonMersennePrime = 6
+
+			assert(!Numberphile.isMersennePrime(nonMersennePrime))
+		})
+
+		it('should raise an exception, when called with a non-positive argument', function () {
+			let nonPositiveFunctionCall = function () {
+				Numberphile.isMersennePrime(-1)
+			}
+
+			assert.throws(nonPositiveFunctionCall)
+		})
+
+		it('should raise an exception, when called with a non-integer argument', function () {
+			let nonIntegerFunctionCall = function () {
+				Numberphile.isMersennePrime('hello')
+			}
+
+			assert.throws(nonIntegerFunctionCall)
+		})
+	})
 })
