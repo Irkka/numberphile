@@ -1,8 +1,28 @@
 const assert = require('assert'),
 	Numberphile = require('../../lib/numberphile')
 
+const shouldValidateArguments = function (functionToTest) {
+	it('should raise an exception, when called with a non-positive argument', function () {
+		let nonPositiveFunctionCall = function () {
+			functionToTest(-1)
+		}
+
+		assert.throws(nonPositiveFunctionCall)
+	})
+
+	it('should raise an exception, when called with a non-integer argument', function () {
+		let nonIntegerFunctionCall = function () {
+			functionToTest('hello')
+		}
+
+		assert.throws(nonIntegerFunctionCall)
+	})
+}
+
 describe('Numberphile', function () {
 	describe('#isHappy', function () {
+		shouldValidateArguments(Numberphile.isHappy)
+
 		it('should return true, if the number is happy', function () {
 			let happyNumber = 7
 			assert(Numberphile.isHappy(happyNumber))
@@ -12,17 +32,11 @@ describe('Numberphile', function () {
 			let unhappyNumber = 8
 			assert(!Numberphile.isHappy(unhappyNumber))
 		})
-
-		it('should raise an exception, when called with a non-integer argument', function () {
-			let nonIntegerFunctionCall = function () {
-				Numberphile.isHappy('hello')
-			}
-
-			assert.throws(nonIntegerFunctionCall)
-		})
 	})
 
 	describe('#isNarcissistic', function () {
+		shouldValidateArguments(Numberphile.isNarcissistic)
+
 		it('should return true, if the number is narcissistic', function () {
 			let narcissisticNumber =  8208
 			assert(Numberphile.isNarcissistic(narcissisticNumber))
@@ -32,17 +46,11 @@ describe('Numberphile', function () {
 			let nonNarcissisticNumber = 11
 			assert(!Numberphile.isNarcissistic(nonNarcissisticNumber))
 		})
-
-		it('should raise an exception, when called with a non-integer argument', function () {
-			let nonIntegerFunctionCall = function () {
-				Numberphile.isNarcissistic('hello')
-			}
-
-			assert.throws(nonIntegerFunctionCall)
-		})
 	})
 
 	describe('#isGrafting', function () {
+		shouldValidateArguments(Numberphile.isGrafting)
+
 		it('should return true, if the number is grafting', function () {
 			let graftingNumber = 98
 			assert(Numberphile.isGrafting(graftingNumber))
@@ -52,17 +60,11 @@ describe('Numberphile', function () {
 			let nonGraftingNumber = 97
 			assert(!Numberphile.isGrafting(nonGraftingNumber))
 		})
-
-		it('should raise an exception, when called with a non-integer argument', function () {
-			let nonIntegerFunctionCall = function () {
-				Numberphile.isGrafting('hello')
-			}
-
-			assert.throws(nonIntegerFunctionCall)
-		})
 	})
 
 	describe('#isHighlyComposite', function () {
+		shouldValidateArguments(Numberphile.isHighlyComposite)
+
 		it('should return true, if the number is highly composite', function () {
 			let highlyCompositeNumber = 12
 			assert(Numberphile.isHighlyComposite(highlyCompositeNumber))
@@ -72,25 +74,11 @@ describe('Numberphile', function () {
 			let primeNumber = 13
 			assert(!Numberphile.isHighlyComposite(primeNumber))
 		})
-
-		it('should raise an exception, when called with a non-positive argument', function () {
-			let nonPositiveFunctionCall = function () {
-				Numberphile.isHighlyComposite(-1)
-			}
-
-			assert.throws(nonPositiveFunctionCall)
-		})
-
-		it('should raise an exception, when called with a non-integer argument', function () {
-			let nonIntegerFunctionCall = function () {
-				Numberphile.isHighlyComposite('hello')
-			}
-
-			assert.throws(nonIntegerFunctionCall)
-		})
 	})
 
 	describe('#isPerfect', function () {
+		shouldValidateArguments(Numberphile.isPerfect)
+
 		it('should return true, if the number is perfect', function () {
 			let perfectNumber = 8128
 
@@ -101,22 +89,6 @@ describe('Numberphile', function () {
 			let imperfectNumber = 5
 
 			assert(!Numberphile.isPerfect(imperfectNumber))
-		})
-
-		it('should raise an exception, when called with a non-positive argument', function () {
-			let nonPositiveFunctionCall = function () {
-				Numberphile.isPerfect(-1)
-			}
-
-			assert.throws(nonPositiveFunctionCall)
-		})
-
-		it('should raise an exception, when called with a non-integer argument', function () {
-			let nonIntegerFunctionCall = function () {
-				Numberphile.isPerfect('hello')
-			}
-
-			assert.throws(nonIntegerFunctionCall)
 		})
 	})
 
@@ -153,6 +125,8 @@ describe('Numberphile', function () {
 	})
 
 	describe('#isMersennePrime', function () {
+		shouldValidateArguments(Numberphile.isMersennePrime)
+
 		it('should return true, if the number is a Mersenne prime', function () {
 			let mersennePrime = 31
 
@@ -163,22 +137,6 @@ describe('Numberphile', function () {
 			let nonMersennePrime = 6
 
 			assert(!Numberphile.isMersennePrime(nonMersennePrime))
-		})
-
-		it('should raise an exception, when called with a non-positive argument', function () {
-			let nonPositiveFunctionCall = function () {
-				Numberphile.isMersennePrime(-1)
-			}
-
-			assert.throws(nonPositiveFunctionCall)
-		})
-
-		it('should raise an exception, when called with a non-integer argument', function () {
-			let nonIntegerFunctionCall = function () {
-				Numberphile.isMersennePrime('hello')
-			}
-
-			assert.throws(nonIntegerFunctionCall)
 		})
 	})
 })
